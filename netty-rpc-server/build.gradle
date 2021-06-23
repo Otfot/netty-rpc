@@ -1,0 +1,19 @@
+plugins {
+    id 'netty-rpc-common-conventions'
+    id 'java'
+}
+
+group 'top.otfot.framework.rpc'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':netty-rpc-common')
+    implementation group: 'cglib', name: 'cglib', version: '3.3.0'
+
+
+}
+

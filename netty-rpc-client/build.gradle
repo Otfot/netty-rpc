@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'netty-rpc-common-conventions'
+}
+
+group 'top.otfot.framework.rpc'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':netty-rpc-common')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+task testStack(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+
+    main = 'com.netty.rpc.client.Main'
+
+    // arguments to pass to the application
+    jvmArgs = ['-Xss2m', '-Djava.compiler=NONE']
+}
